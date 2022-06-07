@@ -45,4 +45,14 @@ public class GrapheListe implements Graphe {
         }
         return res.toString();
     }
+
+    public String toGraphviz(){
+        StringBuffer res = new StringBuffer();
+        res.append("digraph {\n");
+        for (Noeud ensNoeud : this.ensNoeuds) {
+            res.append(ensNoeud.toGraphviz());
+        }
+        res.append("}");
+        return res.toString();
+    }
 }

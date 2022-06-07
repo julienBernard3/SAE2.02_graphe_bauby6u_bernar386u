@@ -17,4 +17,8 @@ public class Arc {
     public String toString() {
         return dest + "(" + cout + ")";
     }
+
+    public String toGraphviz() {
+        return dest + " [label = " + cout + "]";
+    }
 }

@@ -44,6 +44,7 @@ public class Noeud {
 
     /**
      * Getter adj
+     *
      * @return liste des arcs
      */
     public List<Arc> getAdj() {
@@ -57,7 +58,18 @@ public class Noeud {
         }
         return res.toString();
     }
+
+    public String toGraphviz() {
+        StringBuffer res = new StringBuffer();
+        for (Arc arc : adj) {
+            res.append(this.nom + " -> ");
+            res.append(arc.toGraphviz()).append("\n");
+        }
+        return res.toString();
+    }
+
 }
+
 
 
 
