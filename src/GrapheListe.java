@@ -20,11 +20,18 @@ public class GrapheListe implements Graphe{
         }else {
             return(this.ensNoeuds.get(this.ensNom.indexOf(n)).getAdj());
         }
-
-
     }
 
      public void ajouterArc(String depart, String destination, double cout){
+         if(!this.ensNom.contains(depart)){
+             this.ensNoeuds.add(new Noeud(depart));
+             this.ensNom.add(depart);
+         }
 
+        if(!this.ensNom.contains(destination)){
+            this.ensNoeuds.add(new Noeud(destination));
+            this.ensNom.add(destination);
+        }
+         this.ensNoeuds.get(this.ensNom.indexOf(depart)).ajouterArc(this.ensNoeuds.get(this.ensNom.indexOf(destination)),cout);
      }
 }

@@ -37,7 +37,7 @@ public class Noeud {
      * @param destination destination de l arc
      * @param cout        cout de la destination
      */
-    public void ajouterArc(Noeud destination, int cout) {
+    public void ajouterArc(Noeud destination, double cout) {
         this.adj.add(new Arc(destination.nom, cout));
     }
 
