@@ -40,6 +40,10 @@ public class Noeud {
     public void ajouterArc(Noeud destination, int cout) {
         this.adj.add(new Arc(destination.nom, cout));
     }
+
+    public List<Arc> getAdj() {
+        return adj;
+    }
 }
 
 
