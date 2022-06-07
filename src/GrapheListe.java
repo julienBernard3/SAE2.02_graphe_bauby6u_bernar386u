@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +13,32 @@ public class GrapheListe implements Graphe {
     public GrapheListe() {
         this.ensNom = new ArrayList<>();
         this.ensNoeuds = new ArrayList<>();
+    }
+
+    /**
+     * Constructeur avec en param un nom de fichier
+     *
+     * @param nom du fichier a charge
+     */
+    public GrapheListe(String nom) {
+        this.ensNom = new ArrayList<>();
+        this.ensNoeuds = new ArrayList<>();
+
+        try {
+            FileReader fichier = new FileReader(nom);
+            BufferedReader reader = new BufferedReader(fichier);
+            String ligne = reader.readLine();
+            String[] ligneSplit;
+            while (ligne != null) {
+                ligneSplit = ligne.split("\t");
+                ajouterArc(ligneSplit[0], ligneSplit[1], Double.parseDouble(ligneSplit[2]));
+                ligne = reader.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public List<String> listeNoeuds() {
@@ -23,6 +54,7 @@ public class GrapheListe implements Graphe {
     }
 
     public void ajouterArc(String depart, String destination, double cout) {
+
         if (!this.ensNom.contains(depart)) {
             this.ensNoeuds.add(new Noeud(depart));
             this.ensNom.add(depart);
@@ -46,7 +78,7 @@ public class GrapheListe implements Graphe {
         return res.toString();
     }
 
-    public String toGraphviz(){
+    public String toGraphviz() {
         StringBuffer res = new StringBuffer();
         res.append("digraph {\n");
         for (Noeud ensNoeud : this.ensNoeuds) {
