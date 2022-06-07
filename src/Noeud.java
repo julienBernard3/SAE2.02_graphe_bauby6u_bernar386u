@@ -23,12 +23,13 @@ public class Noeud {
 
     /**
      * Methode qui specifie que deux nœuds sont egaux si et seulement si leurs noms sont egaux
+     *
      * @param o Noeud avec lequelle on fait la verification
      * @return si les noeud sont egaux ou non
      */
-    public boolean equals(Object o){
-        Noeud noeud = (Noeud)o;
-        return this.nom==noeud.nom;
+    public boolean equals(Object o) {
+        Noeud noeud = (Noeud) o;
+        return this.nom == noeud.nom;
     }
 
     /**
@@ -43,6 +44,14 @@ public class Noeud {
 
     public List<Arc> getAdj() {
         return adj;
+    }
+
+    public String toString() {
+        StringBuffer res = new StringBuffer(this.nom + " -> ");
+        for (Arc arc : adj) {
+            res.append(arc.toString()).append(" ");
+        }
+        return res.toString();
     }
 }
 
