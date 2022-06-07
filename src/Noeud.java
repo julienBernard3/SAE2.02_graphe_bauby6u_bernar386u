@@ -42,6 +42,10 @@ public class Noeud {
         this.adj.add(new Arc(destination.nom, cout));
     }
 
+    /**
+     * Getter adj
+     * @return liste des arcs
+     */
     public List<Arc> getAdj() {
         return adj;
     }
