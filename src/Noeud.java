@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Noeud {
@@ -16,7 +17,19 @@ public class Noeud {
      */
     public Noeud (String nom){
         this.nom = nom;
-        this.adj = new List<Arc>();
+        this.adj = new ArrayList<Arc>();
     }
+
+
+    /**
+     * Methode qui ajoute un arc
+     * @param destination destination de l arc
+     * @param cout cout de la destination
+     */
+    public void ajouterArc(Noeud destination, int cout){
+
+    }
+
+
 
 }
