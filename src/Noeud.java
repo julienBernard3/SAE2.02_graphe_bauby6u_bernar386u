@@ -21,6 +21,15 @@ public class Noeud {
         this.adj = new ArrayList<Arc>();
     }
 
+    /**
+     * Methode qui specifie que deux nœuds sont egaux si et seulement si leurs noms sont egaux
+     * @param o Noeud avec lequelle on fait la verification
+     * @return si les noeud sont egaux ou non
+     */
+    public boolean equals(Object o){
+        Noeud noeud = (Noeud)o;
+        return this.nom==noeud.nom;
+    }
 
     /**
      * Methode qui ajoute un arc
