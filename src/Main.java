@@ -1,3 +1,4 @@
+import javax.print.DocPrintJob;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,5 +32,13 @@ public class Main {
 //        System.out.println(gL.toGraphviz());
 //        System.out.println("Oue");
         System.out.println(v);
+
+
+        System.out.println( v.calculerChemin("C"));
+
+        Dijkstra dJ = new Dijkstra();
+        Valeur v2 = dJ.resoudre(gL, "A");
+        System.out.println(v2);
+
     }
 }
