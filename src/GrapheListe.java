@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +43,10 @@ public class GrapheListe implements Graphe {
 
     public List<String> listeNoeuds() {
         return this.ensNom;
+    }
+
+    public List<Noeud> listeDnsNoeud() {
+        return this.ensNoeuds;
     }
 
     /**

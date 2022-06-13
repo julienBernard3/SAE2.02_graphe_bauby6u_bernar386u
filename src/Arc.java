@@ -30,4 +30,8 @@ public class Arc {
     public String toGraphviz() {
         return dest + " [label = " + cout + "]";
     }
+
+    public double getPoids() {
+        return cout;
+    }
 }

@@ -1,7 +1,8 @@
 
 public class Main {
     public static void main(String[] args) {
-        GrapheListe gL = new GrapheListe("graphe/Graphe11.txt");
+        System.out.println("1");
+        GrapheListe gL = new GrapheListe("graphe/GrapheEx1.txt");
 //        gL.ajouterArc("D", "C", 10);
 //        gL.ajouterArc("A", "B", 12);
 //        gL.ajouterArc("D", "B", 23);
@@ -19,11 +20,16 @@ public class Main {
 //        gL.ajouterArc("A", "B", 12);
 //
 
+//
+//        System.out.println(gL.toString());
+//        System.out.println(gL.toGraphviz());
 
-        System.out.println(gL.toString());
-        System.out.println(gL.toGraphviz());
-
-
+        BellmanFord bf = new BellmanFord();
+        System.out.println("2");
+        Valeur v = bf.resoudre(gL, "A");
+        System.out.println("3");
+//        System.out.println(gL.toGraphviz());
+//        System.out.println("Oue");
+        System.out.println(v);
     }
-
 }

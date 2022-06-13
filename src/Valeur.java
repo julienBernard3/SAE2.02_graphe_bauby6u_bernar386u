@@ -26,6 +26,15 @@ public class Valeur {
         this.parent = new TreeMap<>();
     }
 
+    public Valeur(Valeur v) {
+        this.valeur = new TreeMap<>();
+        this.parent = new TreeMap<>();
+        for (String s : v.valeur.keySet()) {
+            this.valeur.put(s, v.valeur.get(s));
+            this.parent.put(s, v.parent.get(s));
+        }
+    }
+
     /**
      * permet d'associer une valeur a un nom de noeud (ici L(X))
      *
@@ -88,4 +97,17 @@ public class Valeur {
 
     }
 
+    //equals
+    public boolean equals(Valeur v) {
+        if (this.valeur.size() != v.valeur.size()) {
+            return false;
+        }
+        for (int i = 0; i < this.valeur.size(); i++) {
+            if (this.valeur.get(i) != v.valeur.get(i)) {
+                return false;
+            }
+        }
+        return true;
+
+    }
 }
