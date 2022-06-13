@@ -72,5 +72,23 @@ public class testGraphe {
                 "6 -> 2(18.0) 5(2.0) 7(24.0) 8(10.0) 10(1.0) \n", gL.toString());
     }
 
+    @Test
+    public void testBellmanFord(){
+        GrapheListe gL = new GrapheListe("graphe/GrapheEx1.txt");
+        BellmanFord bf = new BellmanFord();
+        Valeur v = bf.resoudre(gL, "A");
+        assertEquals(0,v.getValeur("A"));
+        assertEquals(null,v.getParent("A"));
+        assertEquals(12,v.getValeur("B"));
+        assertEquals("A",v.getParent("B"));
+        assertEquals(76,v.getValeur("C"));
+        assertEquals("D",v.getParent("C"));
+        assertEquals(66,v.getValeur("D"));
+        assertEquals("E",v.getParent("D"));
+        assertEquals(23,v.getValeur("E"));
+        assertEquals("B",v.getParent("E"));
+
+    }
+
 
 }
