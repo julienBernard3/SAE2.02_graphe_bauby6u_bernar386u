@@ -59,13 +59,9 @@ public class Dijkstra {
 //                 v.parent <- u
 //                 Fin Si
 //                 Fin Pour
-                System.out.println( D + " < " + v.getValeur(g.suivants(u).get(j).getDest()));
                 if (D < v.getValeur(g.suivants(u).get(j).getDest())) {
-                    System.out.println("MAJ");
-                    v.setValeur(g.suivants(u).get(j).getDest(), v.getValeur(g.listeNoeuds().get(j)) + g.suivants(u).get(j).getPoids());
-                    v.setParent(g.suivants(u).get(j).getDest(), g.listeNoeuds().get(j));
-                    System.out.println(v.getValeur(g.suivants(u).get(j).getDest()));
-                    System.out.println(v.getParent(g.suivants(u).get(j).getDest()));
+                    v.setValeur(g.suivants(u).get(j).getDest(), D);
+                    v.setParent(g.suivants(u).get(j).getDest(), u);
                 }
 //
 //              Fin Tant que
@@ -85,13 +81,10 @@ public class Dijkstra {
     public String recupererValMin(List<String> Q, Valeur val) {
         String retour = Q.get(0);
         for (int i = 1; i < Q.size(); i++) {
-            System.out.println(val.getValeur(Q.get(i))  + "|| " + val.getValeur(retour));
                 if (val.getValeur(Q.get(i)) < val.getValeur(retour)) {
                     retour = Q.get(i);
-                    System.out.println("DANS LE IF " + retour);
                 }
         }
-        System.out.println("return " + retour);
         return retour;
     }
 }
