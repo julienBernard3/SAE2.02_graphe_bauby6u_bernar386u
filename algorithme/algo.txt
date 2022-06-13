@@ -1,0 +1,39 @@
+Entrées: 
+	g graphe
+	n nom du noeud de depart
+Début
+	l <- {} 
+	Pour chaque noeuds du graphe faire
+		v.distance <- infini
+		v.precedent <- Indéfini
+		l <- l.adjqlis(v)
+	Fin Pour
+	l(n).distance = 0
+	ancien <- null
+	Tant que ancien != l faire
+		ancien <- l
+		Pour i allant de 1 à l.taille faire
+			Pour j allant de 1 a lNoeuds(i).adj.taille faire
+				Si l(adj(j).dest).distance > l(i).distance+ adj(j).cout() alors
+					l(adj(j).dest).distance <- l(i).distance+ adj(j).cout()
+					l(adj(j).dest).precedent <- lNoeuds(i).nom
+				Fin si
+			Fin pour
+		Fin pour
+	Fin Tant que
+Fin
+
+
+Lexique:
+g : graphe(lNoeuds) : graphe correspondant a une liste de noeuds
+lNoeuds: liste(noeud) : liste des noeuds du graphe
+noeud<nom: chaine de caractère, adj : liste(arc)> : variable composite correspondant a chaque noeud avec son nom et sa liste de valeurs adjacente
+adj : liste(arc) : liste des noeuds adjacente à un noeud
+arc<dest : chaine de caractère, cout: entier> : variable composite correspondant à la destination de l'arc et a la valeur de cet arc
+n: chaine de caractère: nom correspondant au noeud de l'origine du graphe
+l(v) : liste de valeurs v
+v: valeurs<distance : entier, precedent : chaine de caractère> : valeurs des différents sommets
+distance : entier : valeur correspondant à la distance entre l'origine et le noeud en question
+precedent : chaine de caractère: correpond au nom du noeud precedent le noeud en question
+ancien(v) : liste de valeur v correspondant a l'ancienne liste l (permet de stocker la ligne précédente)
+
