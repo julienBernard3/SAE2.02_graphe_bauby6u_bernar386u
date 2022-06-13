@@ -97,6 +97,22 @@ public class Valeur {
 
     }
 
+    /**
+     * Retourne list de noeuds du chemin menant au noeud en param
+     *
+     * @param destination
+     * @return list des noeuds
+     */
+    public List<String> calculerChemin(String destination) {
+        List<String> chemin = new ArrayList<>();
+        String noeud = destination;
+        while (noeud != null) {
+            chemin.add(0, noeud);
+            noeud = parent.get(noeud);
+        }
+        return chemin;
+    }
+
     //equals
     public boolean equals(Valeur v) {
         if (this.valeur.size() != v.valeur.size()) {
