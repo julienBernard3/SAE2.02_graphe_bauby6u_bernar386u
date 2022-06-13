@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GrapheListe implements Graphe {
+
     private List<String> ensNom;
     private List<Noeud> ensNoeuds;
 
@@ -45,6 +46,11 @@ public class GrapheListe implements Graphe {
         return this.ensNom;
     }
 
+    /**
+     * Methode qui renvoie la liste des noeuds adjacents a un noeud
+     * @param n le noeud apres lequel on veut recuperer la liste
+     * @return la liste des noeuds adjacents
+     */
     public List<Arc> suivants(String n) {
         if (!ensNom.contains(n)) {
             return null;
@@ -53,6 +59,13 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    /**
+     * Methode qui ajoute un arc
+     *
+     * @param depart origine de l arc
+     * @param destination destination de l arc
+     * @param cout cout de l arc
+     */
     public void ajouterArc(String depart, String destination, double cout) {
 
         if (!this.ensNom.contains(depart)) {
@@ -68,6 +81,10 @@ public class GrapheListe implements Graphe {
     }
 
 
+    /**
+     * Methode toString
+     * @return La representation du graphe
+     */
     public String toString() {
         StringBuffer res = new StringBuffer();
         //parcours la liste des noeuds avec une boucle while

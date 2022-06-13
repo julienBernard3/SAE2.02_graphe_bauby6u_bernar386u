@@ -59,8 +59,7 @@ public class testGraphe {
         //Preparation des donnes
         GrapheListe gL = new GrapheListe("graphe/Graphe1.txt");
 
-        System.out.println(gL.toString());
-
+        //Verification
         assertEquals("1 -> 2(4.0) 4(15.0) \n" +
                 "2 -> 1(1.0) 3(9.0) 4(12.0) 5(8.0) \n" +
                 "4 -> 1(7.0) 2(17.0) 3(4.0) 5(11.0) 7(5.0) \n" +

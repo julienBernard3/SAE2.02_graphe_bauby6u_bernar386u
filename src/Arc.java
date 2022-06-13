@@ -14,6 +14,15 @@ public class Arc {
         this.cout = (cout < 0) ? 1 : cout;
     }
 
+    /**
+     * Getter dest
+     *
+     * @return nom du noeud de destination
+     */
+    public String getDest() {
+        return dest;
+    }
+
     public String toString() {
         return dest + "(" + cout + ")";
     }
