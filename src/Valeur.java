@@ -102,12 +102,14 @@ public class Valeur {
         if (this.valeur.size() != v.valeur.size()) {
             return false;
         }
-        for (int i = 0; i < this.valeur.size(); i++) {
-            if (this.valeur.get(i) != v.valeur.get(i)) {
+        for (String s : this.valeur.keySet()) {
+            if (!v.valeur.containsKey(s)) {
+                return false;
+            }
+            if (this.valeur.get(s) != v.valeur.get(s)) {
                 return false;
             }
         }
         return true;
-
     }
 }
