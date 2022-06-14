@@ -11,12 +11,14 @@ public class GenerererGraphes {
             g.ajouterArc(String.valueOf(i), String.valueOf(i + 1), (int) (Math.random() * coutMax));
         }
         for (int i = 0; i < nbArcs; i++) {
-            int depart = (int) (Math.random() * nbNoeuds);
-            int arrivee = (int) (Math.random() * nbNoeuds);
+            int depart;
+            int arrivee;
+            do {
+                depart = (int) (Math.random() * nbNoeuds);
+                arrivee = (int) (Math.random() * nbNoeuds);
+            }while (depart != arrivee && g.existe(String.valueOf(depart), String.valueOf(arrivee)));
 
-            if (depart != arrivee) {
-                g.ajouterArc(String.valueOf(depart), String.valueOf(arrivee), (int) (Math.random() * coutMax));
-            }
+            g.ajouterArc(String.valueOf(depart), String.valueOf(arrivee), (int) (Math.random() * coutMax));
         }
         System.out.println(g.toGraphviz());
     }
