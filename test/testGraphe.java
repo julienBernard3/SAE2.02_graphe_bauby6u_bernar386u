@@ -90,5 +90,23 @@ public class testGraphe {
 
     }
 
+    @Test
+    public void testDijkstra(){
+        GrapheListe gL = new GrapheListe("graphe/GrapheEx1.txt");
+        Dijkstra bj = new Dijkstra();
+        Valeur v = bj.resoudre(gL, "A");
+        assertEquals(0,v.getValeur("A"));
+        assertEquals(null,v.getParent("A"));
+        assertEquals(12,v.getValeur("B"));
+        assertEquals("A",v.getParent("B"));
+        assertEquals(76,v.getValeur("C"));
+        assertEquals("D",v.getParent("C"));
+        assertEquals(66,v.getValeur("D"));
+        assertEquals("E",v.getParent("D"));
+        assertEquals(23,v.getValeur("E"));
+        assertEquals("B",v.getParent("E"));
+
+    }
+
 
 }
