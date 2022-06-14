@@ -64,7 +64,7 @@ public class Dijkstra {
 //                 Fin Si
                 }
 //                 Fin Pour
-                System.out.println(v);
+//                System.out.println(v);
             }
 //              Fin Tant que
         }

@@ -4,7 +4,7 @@ public class MainDijkstra {
         GrapheListe gL = new GrapheListe("graphe/GrapheBoucle.txt");
         Dijkstra dJ = new Dijkstra();
         Valeur v2 = dJ.resoudre(gL, "A");
-        System.out.println(v2);
+//        System.out.println(v2);
     }
 }
 
