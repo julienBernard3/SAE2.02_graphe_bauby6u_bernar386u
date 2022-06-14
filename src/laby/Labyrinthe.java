@@ -1,5 +1,8 @@
 package laby;
 
+import Algo.Graphe;
+import Algo.GrapheListe;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -127,9 +130,9 @@ public class Labyrinthe {
      *
      * @param action une des actions possibles
      */
-    public int[] deplacerPerso(int i, int j,String action) {
+    public int[] deplacerPerso(int i, int j, String action) {
         // case courante
-        int[] courante = {i,j};
+        int[] courante = {i, j};
 
         // calcule case suivante
         int[] suivante = getSuivant(courante[0], courante[1], action);
@@ -176,6 +179,7 @@ public class Labyrinthe {
 
     /**
      * return mur en (i,j)
+     *
      * @param x
      * @param y
      * @return
@@ -183,5 +187,14 @@ public class Labyrinthe {
     public boolean getMur(int x, int y) {
         // utilise le tableau de boolean
         return this.murs[x][y];
+    }
+
+    /**
+     * Methode generer graphe du laby correspondant
+     */
+    public Graphe genererGraphe() {
+        GrapheListe graphe = new GrapheListe();
+
+        return graphe;
     }
 }

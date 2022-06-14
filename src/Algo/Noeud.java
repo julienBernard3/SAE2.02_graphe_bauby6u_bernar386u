@@ -1,3 +1,5 @@
+package Algo;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +26,7 @@ public class Noeud {
     /**
      * Methode qui specifie que deux nœuds sont egaux si et seulement si leurs noms sont egaux
      *
-     * @param o Noeud avec lequelle on fait la verification
+     * @param o Algo.Noeud avec lequelle on fait la verification
      * @return si les noeud sont egaux ou non
      */
     public boolean equals(Object o) {

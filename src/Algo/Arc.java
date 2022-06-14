@@ -1,3 +1,5 @@
+package Algo;
+
 public class Arc {
 
     private String dest;

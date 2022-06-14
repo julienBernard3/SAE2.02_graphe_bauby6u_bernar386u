@@ -1,13 +1,19 @@
+package Main;
+
+import Algo.BellmanFord;
+import Algo.GrapheListe;
+import Algo.Valeur;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 
 public class MainTestBellmanFord {
     public static void main(String[] args) throws IOException {
-        //effectue BellmanFord pour tous les graphes du dossier graphe
+        //effectue Algo.BellmanFord pour tous les graphes du dossier graphe
         //ajout d'un timer pour comparer les temps d'execution
 
-        //test Dijkstra
+        //test Algo.Dijkstra
         GrapheListe gL;
         File ListGraphes = new File("graphe");
         BellmanFord bF = new BellmanFord();

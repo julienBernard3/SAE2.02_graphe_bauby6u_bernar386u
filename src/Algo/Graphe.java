@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package Algo;
+
 import java.util.List;
 
 public interface Graphe {

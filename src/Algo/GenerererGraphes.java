@@ -1,3 +1,5 @@
+package Algo;
+
 public class GenerererGraphes {
     //generer un graphe aleatoire
 

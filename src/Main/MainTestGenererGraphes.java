@@ -1,3 +1,5 @@
+package Main;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class MainTestGenererGraphes {
             listeGraphes.add(g.genererGrapheAleatoire());
         }
 
-        //test algorithme BellmanFord
+        //test algorithme Algo.BellmanFord
         long timeBellman = System.nanoTime();
         for (GrapheListe gL2 : listeGraphes) {
             BellmanFord bF = new BellmanFord();
@@ -23,7 +25,7 @@ public class MainTestGenererGraphes {
             timeTotalBell += System.nanoTime() - timeBellman;
         }
 
-        //Test algorithme Dijkstra
+        //Test algorithme Algo.Dijkstra
         long timeDijkstra = System.nanoTime();
         for (GrapheListe gL2 : listeGraphes) {
             Dijkstra dJ = new Dijkstra();
@@ -31,7 +33,7 @@ public class MainTestGenererGraphes {
             timeTotalDij += System.nanoTime() - timeDijkstra;
         }
 
-        System.out.println("Temps d'execution Dijkstra: " + (timeTotalDij) / 1000000 + " ms");
+        System.out.println("Temps d'execution Algo.Dijkstra: " + (timeTotalDij) / 1000000 + " ms");
         System.out.println("Temps d'execution BelmanFord: " + (timeTotalBell) / 1000000 + " ms");
 
     }

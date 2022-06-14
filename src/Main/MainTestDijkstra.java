@@ -1,13 +1,15 @@
+package Main;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 
 public class MainTestDijkstra {
     public static void main(String[] args) throws IOException {
-        //effectue BellmanFord pour tous les graphes du dossier graphe
+        //effectue Algo.BellmanFord pour tous les graphes du dossier graphe
         //ajout d'un timer pour comparer les temps d'execution
 
-        //test Dijkstra
+        //test Algo.Dijkstra
         GrapheListe gL = new GrapheListe("graphe/Graphe1.txt");
         File ListGraphes = new File("graphe");
         Dijkstra dJ = new Dijkstra();
