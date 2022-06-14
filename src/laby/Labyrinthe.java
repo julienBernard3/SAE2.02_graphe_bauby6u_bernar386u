@@ -194,7 +194,19 @@ public class Labyrinthe {
      */
     public Graphe genererGraphe() {
         GrapheListe graphe = new GrapheListe();
+        for (int i = 0; i < getLength(); i++) {
+            for (int j = 0; j < getLengthY(); j++) {
 
+                int[] suivante = getSuivant(i, j, "Droite");
+                if (!getMur(suivante[0], suivante[1])) {
+                    graphe.ajouterArc("(" + i + "," + j + ")", "(" + suivante[0] + "," + suivante[1] + ")", 1);
+                }
+                suivante = getSuivant(i, j, "Bas");
+                if (!getMur(suivante[0], suivante[1])) {
+                    graphe.ajouterArc("(" + i + "," + j + ")", "(" + suivante[0] + "," + suivante[1] + ")", 1);
+                }
+            }
+        }
         return graphe;
     }
 }
