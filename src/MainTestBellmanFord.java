@@ -8,11 +8,11 @@ public class MainTestBellmanFord {
         //ajout d'un timer pour comparer les temps d'execution
 
         //test Dijkstra
-        long timeBelmanFord = System.nanoTime();
         GrapheListe gL;
         File ListGraphes = new File("graphe");
         BellmanFord bF = new BellmanFord();
         File[] listeGraphes = ListGraphes.listFiles();
+        long timeBelmanFord = System.nanoTime();
         int i = 0;
         for (File f : listeGraphes) {
             if (f.getName().endsWith(".txt")) {

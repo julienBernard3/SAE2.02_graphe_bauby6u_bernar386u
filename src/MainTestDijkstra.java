@@ -8,19 +8,19 @@ public class MainTestDijkstra {
         //ajout d'un timer pour comparer les temps d'execution
 
         //test Dijkstra
-        long timeDijkstra = System.nanoTime();
         GrapheListe gL = new GrapheListe("graphe/Graphe1.txt");
         File ListGraphes = new File("graphe");
         Dijkstra dJ = new Dijkstra();
         File[] listeGraphes = ListGraphes.listFiles();
+        long timeDijkstra = System.nanoTime();
         int i = 0;
         for (File f : listeGraphes) {
             if (f.getName().endsWith(".txt")) {
                 gL = new GrapheListe("graphe/" + f.getName());
                 Valeur v2 = dJ.resoudre(gL, "1");
-                System.out.println(i + "\n\n");
+                System.out.println(i);
                 i++;
-                System.out.println(v2);
+//                System.out.println(v2);
 
             }
         }

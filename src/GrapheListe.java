@@ -76,7 +76,7 @@ public class GrapheListe implements Graphe {
             this.ensNom.add(depart);
         }
 
-        if (!this.ensNom.contains(destination)) {
+        if (!this.ensNom.contains(destination) ) {
             this.ensNoeuds.add(new Noeud(destination));
             this.ensNom.add(destination);
         }
@@ -106,5 +106,16 @@ public class GrapheListe implements Graphe {
         }
         res.append("}");
         return res.toString();
+    }
+
+    public boolean existe(String depart, String destination){
+        List<Arc> list = suivants(depart);
+        for(Arc arc : list){
+            if(arc.equals(destination)){
+                System.out.println("Existe");
+                return true;
+            }
+        }
+        return false;
     }
 }
