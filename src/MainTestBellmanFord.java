@@ -29,12 +29,5 @@ public class MainTestBellmanFord {
         System.out.println("Temps d'execution : " + (timeEndBelmanFord - timeBelmanFord) / 1000000 + " ms");
     }
 
-    public static String getFirstChar(String s) throws IOException {
-        //create reader
-        StringReader reader = new StringReader(s);
-        //read first char
-        int c = reader.read();
-        //return char
-        return Character.toString((char) c);
-    }
+
 }

@@ -111,8 +111,7 @@ public class GrapheListe implements Graphe {
     public boolean existe(String depart, String destination){
         List<Arc> list = suivants(depart);
         for(Arc arc : list){
-            if(arc.equals(destination)){
-                System.out.println("Existe");
+            if(arc.getDest().equals(destination)){
                 return true;
             }
         }
