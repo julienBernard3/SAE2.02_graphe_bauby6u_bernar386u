@@ -55,20 +55,21 @@ public class Dijkstra {
                 //D <- u.distance + poids(u,v)
                 double D = v.getValeur(u) + g.suivants(u).get(j).getPoids();
 //                 Si D < v.distance
-//                 Alors v.distance <- D
-//                 v.parent <- u
-//                 Fin Si
-//                 Fin Pour
+
                 if (D < v.getValeur(g.suivants(u).get(j).getDest())) {
+//                 Alors v.distance <- D
                     v.setValeur(g.suivants(u).get(j).getDest(), D);
+//                 v.parent <- u
                     v.setParent(g.suivants(u).get(j).getDest(), u);
+//                 Fin Si
                 }
-//
-//              Fin Tant que
-//          Fin
+//                 Fin Pour
+                System.out.println(v);
             }
+//              Fin Tant que
         }
         return v;
+//          Fin
     }
 
     /**

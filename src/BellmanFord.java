@@ -31,6 +31,7 @@ public class BellmanFord {
 
                 }
             }
+            System.out.println(v);
         }
 
 
