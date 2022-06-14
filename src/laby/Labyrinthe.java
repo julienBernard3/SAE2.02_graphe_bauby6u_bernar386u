@@ -192,18 +192,25 @@ public class Labyrinthe {
     /**
      * Methode generer graphe du laby correspondant
      */
-    public Graphe genererGraphe() {
+    public GrapheListe genererGraphe() {
         GrapheListe graphe = new GrapheListe();
         for (int i = 0; i < getLength(); i++) {
             for (int j = 0; j < getLengthY(); j++) {
+                if (!getMur(i, j)) {
 
-                int[] suivante = getSuivant(i, j, "Droite");
-                if (!getMur(suivante[0], suivante[1])) {
-                    graphe.ajouterArc("(" + i + "," + j + ")", "(" + suivante[0] + "," + suivante[1] + ")", 1);
-                }
-                suivante = getSuivant(i, j, "Bas");
-                if (!getMur(suivante[0], suivante[1])) {
-                    graphe.ajouterArc("(" + i + "," + j + ")", "(" + suivante[0] + "," + suivante[1] + ")", 1);
+
+                    int[] suivante = getSuivant(i, j, "Droite");
+                    if (!getMur(suivante[0], suivante[1])) {
+                        graphe.ajouterArc("\"" + i + "," + j + "\"", "\"" + suivante[0] + "," + suivante[1] + "\"", 1);
+                        graphe.ajouterArc("\"" + suivante[0] + "," + suivante[1] + "\"", "\"" + i + "," + j + "\"", 1);
+                    }
+                    suivante = getSuivant(i, j, "Bas");
+                    if (!getMur(suivante[0], suivante[1])) {
+                        graphe.ajouterArc("\"" + i + "," + j + "\"", "\"" + suivante[0] + "," + suivante[1] + "\"", 1);
+                        graphe.ajouterArc("\"" + suivante[0] + "," + suivante[1] + "\"", "\"" + i + "," + j + "\"", 1);
+
+                    }
+
                 }
             }
         }
