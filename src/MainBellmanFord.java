@@ -1,7 +1,7 @@
 public class MainBellmanFord {
 
     public static void main(String[] args) {
-        GrapheListe gL = new GrapheListe("graphe/GrapheBoucle.txt");
+        GrapheListe gL = new GrapheListe("grapheExemple/GrapheBoucle.txt");
         BellmanFord bf = new BellmanFord();
         Valeur v = bf.resoudre(gL, "A");
 //        System.out.println(v);
