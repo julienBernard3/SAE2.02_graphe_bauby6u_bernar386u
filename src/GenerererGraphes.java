@@ -2,7 +2,7 @@ public class GenerererGraphes {
     //generer un graphe aleatoire
     public static void main(String[] args) {
 
-        int nbArcs = 5;
+        int nbArcs = 10;
         int nbNoeuds = 10;
         int coutMax = 10;
         GrapheListe g = new GrapheListe();
