@@ -11,23 +11,22 @@ public class MainTestBellmanFord {
         long timeBelmanFord = System.nanoTime();
         GrapheListe gL;
         File ListGraphes = new File("graphe");
-        Bel dJ = new Dijkstra();
+        BellmanFord bF = new BellmanFord();
         File[] listeGraphes = ListGraphes.listFiles();
         int i = 0;
         for (File f : listeGraphes) {
             if (f.getName().endsWith(".txt")) {
                 gL = new GrapheListe("graphe/" + f.getName());
-                Valeur v2 = dJ.resoudre(gL, "1");
-                System.out.println(i + "\n\n");
+                Valeur v2 = bF.resoudre(gL, "1");
+                System.out.println(i);
                 i++;
-                System.out.println(v2);
 
             }
         }
 
-        long timeEndDijkstra = System.nanoTime();
+        long timeEndBelmanFord = System.nanoTime();
 
-        System.out.println("Temps d'execution : " + (timeEndDijkstra - timeBelmanFord) / 1000000 + " ms");
+        System.out.println("Temps d'execution : " + (timeEndBelmanFord - timeBelmanFord) / 1000000 + " ms");
     }
 
     public static String getFirstChar(String s) throws IOException {
