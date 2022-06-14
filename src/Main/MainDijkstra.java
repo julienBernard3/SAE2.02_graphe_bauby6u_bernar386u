@@ -1,5 +1,5 @@
 package Main;
-
+import Algo.*;
 public class MainDijkstra {
 
     public static void main(String[] args) {

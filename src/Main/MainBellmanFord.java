@@ -1,4 +1,5 @@
 package Main;
+import Algo.*;
 
 public class MainBellmanFord {
 

@@ -1,5 +1,6 @@
 package Main;
 
+import Algo.*;
 import java.util.ArrayList;
 import java.util.List;
 
