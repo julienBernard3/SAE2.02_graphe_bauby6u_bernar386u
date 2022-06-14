@@ -1,9 +1,7 @@
-import javax.print.DocPrintJob;
-
-public class Main {
+public class MainBellmanFord {
     public static void main(String[] args) {
         System.out.println("1");
-        GrapheListe gL = new GrapheListe("graphe/GrapheEx1.txt");
+        GrapheListe gL = new GrapheListe("graphe/GrapheBoucle.txt");
 //        gL.ajouterArc("D", "C", 10);
 //        gL.ajouterArc("A", "B", 12);
 //        gL.ajouterArc("D", "B", 23);
