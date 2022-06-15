@@ -1,6 +1,5 @@
 package laby;
 
-import Algo.Graphe;
 import Algo.GrapheListe;
 
 import java.io.BufferedReader;

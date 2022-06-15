@@ -20,8 +20,8 @@ public class LabyTest {
         Valeur v = dJ.resoudre(g, "\"1,1\"");
         //Calcule du chemin minimal de 1,1 à 5,5
         List<String> cheminMin = v.calculerChemin("\"5,5\"");
-//        System.out.println(g.toGraphviz());
-        System.out.println(g.toString());
+        System.out.println(g.toGraphviz());
+//        System.out.println(g.toString());
 
         //Test deuxieme methode : avec la classe GrapheLabyrinthe
         Labyrinthe laby2 = new Labyrinthe("labySimple/laby1.txt");

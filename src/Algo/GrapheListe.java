@@ -1,7 +1,6 @@
 package Algo;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,8 +35,6 @@ public class GrapheListe implements Graphe {
                 ajouterArc(ligneSplit[0], ligneSplit[1], Double.parseDouble(ligneSplit[2]));
                 ligne = reader.readLine();
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -91,7 +88,7 @@ public class GrapheListe implements Graphe {
      * @return La representation du graphe
      */
     public String toString() {
-        StringBuffer res = new StringBuffer();
+        StringBuilder res = new StringBuilder();
         //parcours la liste des noeuds avec une boucle while
         for (Noeud ensNoeud : this.ensNoeuds) {
             res.append(ensNoeud.toString()).append("\n");
@@ -101,7 +98,7 @@ public class GrapheListe implements Graphe {
     }
 
     public String toGraphviz() {
-        StringBuffer res = new StringBuffer();
+        StringBuilder res = new StringBuilder();
         res.append("digraph {\n");
         for (Noeud ensNoeud : this.ensNoeuds) {
             res.append(ensNoeud.toGraphviz());

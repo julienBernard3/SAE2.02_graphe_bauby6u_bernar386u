@@ -31,7 +31,7 @@ public class Noeud {
      */
     public boolean equals(Object o) {
         Noeud noeud = (Noeud) o;
-        return this.nom == noeud.nom;
+        return this.nom.equals(noeud.nom);
     }
 
     /**
@@ -54,7 +54,7 @@ public class Noeud {
     }
 
     public String toString() {
-        StringBuffer res = new StringBuffer(this.nom + " -> ");
+        StringBuilder res = new StringBuilder(this.nom + " -> ");
         for (Arc arc : adj) {
             res.append(arc.toString()).append(" ");
         }
@@ -62,9 +62,9 @@ public class Noeud {
     }
 
     public String toGraphviz() {
-        StringBuffer res = new StringBuffer();
+        StringBuilder res = new StringBuilder();
         for (Arc arc : adj) {
-            res.append(this.nom + " -> ");
+            res.append(this.nom).append(" -> ");
             res.append(arc.toGraphviz()).append("\n");
         }
         return res.toString();
