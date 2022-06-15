@@ -70,6 +70,14 @@ public class Noeud {
         return res.toString();
     }
 
+    public boolean existe(String arrivee) {
+        for (Arc arc : adj) {
+            if (arc.getDest().equals(arrivee)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 
