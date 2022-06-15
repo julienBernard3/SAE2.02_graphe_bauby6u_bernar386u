@@ -116,6 +116,10 @@ public class GrapheLabyrinthe implements Graphe {
         return res.toString();
     }
 
+    public List<Noeud> listeDnsNoeud() {
+        return this.ensNoeuds;
+    }
+
     /**
      * Methode qui ajoute un arc dans le graphe
      *
@@ -142,5 +146,15 @@ public class GrapheLabyrinthe implements Graphe {
             }
         }
 
+    }
+
+    /**
+     * Methode qui permet de renvoyer le chemin le plus cours entre deux sommets
+     * @return List des arcs
+     */
+    public List<String> cheminCourt(String depart, String arrivee) {
+        Dijkstra dj = new Dijkstra();
+        Valeur v = dj.resoudre(this, depart);
+        return v.calculerChemin(arrivee);
     }
 }
