@@ -25,14 +25,26 @@ public class Arc {
         return dest;
     }
 
+    /**
+     * affichage d'un arc
+     * @return string avec la destination et le cout
+     */
     public String toString() {
         return dest + "(" + cout + ")";
     }
 
+    /**
+     * affichage d'un arc au format graphviz
+     * @return String avec le nom du noeud de destination et le cout au bon format
+     */
     public String toGraphviz() {
         return dest + " [label = " + cout + "]";
     }
 
+    /**
+     * Getter poids
+     * @return poids de l arc
+     */
     public double getPoids() {
         return cout;
     }

@@ -68,7 +68,12 @@ public class GrapheLabyrinthe implements Graphe {
         return arcs;
     }
 
-
+    /**
+     * Methode qui permet de transformer les coordonnées du format "x,y" en tableau
+     *
+     * @param n string a transformer
+     * @return tableau des coordonnées {x,y}
+     */
     public int[] reverse(String n) {
         String[] postition = n.split(",");
         int[] pos = {Integer.parseInt(postition[0].substring(1)), Integer.parseInt(postition[1].substring(0, postition[1].length() - 1))};
@@ -116,6 +121,11 @@ public class GrapheLabyrinthe implements Graphe {
         return res.toString();
     }
 
+    /**
+     * Methode qui retourne une list des noeuds
+     *
+     * @return la liste des noeuds
+     */
     public List<Noeud> listeDnsNoeud() {
         return this.ensNoeuds;
     }
@@ -150,6 +160,7 @@ public class GrapheLabyrinthe implements Graphe {
 
     /**
      * Methode qui permet de renvoyer le chemin le plus cours entre deux sommets
+     *
      * @return List des arcs
      */
     public List<String> cheminCourt(String depart, String arrivee) {

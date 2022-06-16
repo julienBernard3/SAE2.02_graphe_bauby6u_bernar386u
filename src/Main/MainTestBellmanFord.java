@@ -15,18 +15,20 @@ public class MainTestBellmanFord {
 
         //test Algo.Dijkstra
         GrapheListe gL;
+        //Creation d'un dossier contenant tous les graphes
         File ListGraphes = new File("graphe");
         BellmanFord bF = new BellmanFord();
+        //Creation d'un tableau de fichiers contenant tous les graphes
         File[] listeGraphes = ListGraphes.listFiles();
         long timeBelmanFord = System.nanoTime();
         int i = 0;
+        //Parcours de tous les graphes dans l'ordre
         for (File f : listeGraphes) {
+            //Verification si le fichier est un fichier texte
             if (f.getName().endsWith(".txt")) {
                 gL = new GrapheListe("graphe/" + f.getName());
                 Valeur v2 = bF.resoudre(gL, "1");
-                System.out.println(i);
-                i++;
-
+    
             }
         }
 

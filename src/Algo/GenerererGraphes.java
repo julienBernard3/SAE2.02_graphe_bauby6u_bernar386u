@@ -7,12 +7,22 @@ public class GenerererGraphes {
     int nbNoeuds;
     int coutMax;
 
+    /**
+     * Constructeur d'un graphe
+     * @param nbArc nombre d arcs
+     * @param nbNoeud nombre de noeuds
+     * @param coutMax cout maximal d'un arc
+     */
     public GenerererGraphes(int nbArc, int nbNoeud, int coutMax) {
         this.nbArcs = nbArc;
         this.nbNoeuds = nbNoeud;
         this.coutMax = coutMax;
     }
 
+    /**
+     * Methode qui genere un graphe aleatoire en fonction des attributs
+     * @return graphe aleatoire de type GrapheListe
+     */
     public GrapheListe genererGrapheAleatoire() {
         GrapheListe g = new GrapheListe();
 
