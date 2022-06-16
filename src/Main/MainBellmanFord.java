@@ -7,7 +7,7 @@ public class MainBellmanFord {
         GrapheListe gL = new GrapheListe("grapheExemple/GrapheBoucle.txt");
         BellmanFord bf = new BellmanFord();
         Valeur v = bf.resoudre(gL, "A");
-//        System.out.println(v);
+        System.out.println(v);
 
 
 //        System.out.println( v.calculerChemin("C"));
