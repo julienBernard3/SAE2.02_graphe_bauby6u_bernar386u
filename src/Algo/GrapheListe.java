@@ -97,6 +97,10 @@ public class GrapheListe implements Graphe {
         return res.toString();
     }
 
+    /**
+     * affichage d'un arc au format graphviz
+     * @return String avec le nom du noeud de destination et le cout au bon format
+     */
     public String toGraphviz() {
         StringBuilder res = new StringBuilder();
         res.append("digraph {\n");

@@ -189,25 +189,29 @@ public class Labyrinthe {
     }
 
     /**
-     * Methode generer graphe du laby correspondant
+     * Methode generer graphe du labyrinthe en attributs
+     *
+     * @return graphe du labyrinthe de type GrapheListe
      */
     public GrapheListe genererGraphe() {
+        //Creation du graphe
         GrapheListe graphe = new GrapheListe();
+        //Parcours de tout le labyrinthe en partant d'en haut a gauche
         for (int i = 0; i < getLength(); i++) {
             for (int j = 0; j < getLengthY(); j++) {
+                //Si ce n est pas un mur
                 if (!getMur(i, j)) {
-
-
+                    //On essaye la case de droite
                     int[] suivante = getSuivant(i, j, "Droite");
                     if (!getMur(suivante[0], suivante[1])) {
                         graphe.ajouterArc("\"" + i + "," + j + "\"", "\"" + suivante[0] + "," + suivante[1] + "\"", 1);
                         graphe.ajouterArc("\"" + suivante[0] + "," + suivante[1] + "\"", "\"" + i + "," + j + "\"", 1);
                     }
+                    //On essaye la case du bas
                     suivante = getSuivant(i, j, "Bas");
                     if (!getMur(suivante[0], suivante[1])) {
                         graphe.ajouterArc("\"" + i + "," + j + "\"", "\"" + suivante[0] + "," + suivante[1] + "\"", 1);
                         graphe.ajouterArc("\"" + suivante[0] + "," + suivante[1] + "\"", "\"" + i + "," + j + "\"", 1);
-
                     }
 
                 }
