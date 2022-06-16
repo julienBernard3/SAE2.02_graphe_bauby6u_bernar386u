@@ -107,6 +107,12 @@ public class GrapheListe implements Graphe {
         return res.toString();
     }
 
+    /**
+     * Methode permetant de savoir s'il existe deja un arc dans un certain sens
+     * @param depart origine de l'arc
+     * @param destination desination de l'arc
+     * @return si l'arc existe deja ou non
+     */
     public boolean existe(String depart, String destination){
         List<Arc> list = suivants(depart);
         for(Arc arc : list){
